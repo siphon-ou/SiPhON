@@ -1,0 +1,180 @@
+<features cppSourceRoots="src" definesFile="src/core4inet/features.h">
+    <feature
+        id="AVB_common"
+        name="AVB Common"
+        description = "The common part of the AVB implementation"
+        initiallyEnabled = "true"
+        requires = "IEEE8021Q_common"
+        labels = ""
+        nedPackages = "
+                       core4inet.applications.trafficsource.avb
+                       core4inet.applications.trafficsink.avb
+                       core4inet.base.avb
+                       core4inet.buffer.avb
+                       core4inet.incoming.avb
+                       core4inet.linklayer.beHandling.avb
+                       core4inet.linklayer.ethernet.avb
+                       core4inet.linklayer.inControl.avb
+                       core4inet.linklayer.shaper.avb
+                       core4inet.services.avb
+                      "
+        extraSourceFolders = ""
+        compileFlags = "-DWITH_AVB_COMMON"
+        linkerFlags = ""
+        />
+    <feature
+        id="AVB_examples"
+        name="AVB examples"
+        description = "Examples for the AVB implementation"
+        initiallyEnabled = "true"
+        requires = "AVB_common"
+        labels = ""
+        nedPackages = "
+                      "
+        extraSourceFolders = ""
+        linkerFlags = ""
+        />
+    <feature
+        id="AS6802_common"
+        name="AS6802 Common"
+        description = "The common part of the AS6802 implementation"
+        initiallyEnabled = "true"
+        requires = ""
+        labels = ""
+        nedPackages = "
+                       core4inet.applications.AS6802
+                       core4inet.applications.trafficsource.AS6802
+                       core4inet.applications.trafficsink.AS6802
+                       core4inet.base.AS6802
+                       core4inet.buffer.AS6802
+                       core4inet.incoming.AS6802
+                       core4inet.linklayer.ethernet.AS6802
+                       core4inet.linklayer.inControl.AS6802
+                       core4inet.linklayer.shaper.AS6802
+                       core4inet.nodes.ethernet.AS6802
+                      "
+        extraSourceFolders = ""
+        compileFlags = "-DWITH_AS6802_COMMON"
+        linkerFlags = ""
+        />
+    <feature
+        id="AVB_AS6802_nodes"
+        name="AVB with AS6802 nodes"
+        description = "Nodes with combined AVB and AS6802 functionallity"
+        initiallyEnabled = "true"
+        requires = "AVB_common AS6802_common"
+        labels = ""
+        nedPackages = "
+                       core4inet.nodes.ethernet.avb_AS6802
+                      "
+        extraSourceFolders = ""
+        compileFlags = ""
+        linkerFlags = ""
+        />
+    <feature
+        id="TTE_api"
+        name="TTEthernet API"
+        description = "The TTEthernet API support"
+        initiallyEnabled = "false"
+        requires = "AS6802_common"
+        labels = ""
+        nedPackages = "
+                       core4inet.api.AS6802
+                       core4inet.applications.api.AS6802
+                      "
+        extraSourceFolders = ""
+        compileFlags = "-DWITH_TTE_API"
+        linkerFlags = ""
+        />
+    <feature
+        id="AS6802_sync"
+        name="[CURRENTLY NOT FUNCTIONAL] AS6802 Synchronisation Protocol"
+        description = "The simulation model for the AS6802 synchronisation protocol"
+        initiallyEnabled = "false"
+        requires = "AS6802_common"
+        labels = ""
+        nedPackages = "
+                       core4inet.synchronisation.AS6802
+                      "
+        extraSourceFolders = ""
+        compileFlags = "-DWITH_AS6802_SYNC"
+        linkerFlags = ""
+        />
+    <feature
+        id="IEEE8021Q_common"
+        name="IEEE 802.1Q Common"
+        description = "The common part of the IEEE 802.1Q implementation"
+        initiallyEnabled = "true"
+        requires = ""
+        labels = ""
+        nedPackages = "
+                       core4inet.linklayer.shaper.IEEE8021Q
+                       core4inet.nodes.ethernet.IEEE8021Q
+                       core4inet.applications.trafficsource.IEEE8021Q
+                      "
+        extraSourceFolders = ""
+        compileFlags = "-DWITH_IEEE8021Q_COMMON"
+        linkerFlags = ""
+        />
+    <feature
+        id="IEEE8021Qbv_common"
+        name="IEEE 802.1Qbv Common"
+        description = "The common part of the IEEE 802.1Qbv implementation"
+        initiallyEnabled = "true"
+        requires = "IEEE8021Q_common AVB_common"
+        labels = ""
+        nedPackages = "
+                       core4inet.incoming.IEEE8021Qbv
+                       core4inet.linklayer.shaper.IEEE8021Qbv
+                       core4inet.nodes.ethernet.IEEE8021Qbv
+                      "
+        extraSourceFolders = ""
+        compileFlags = "-DWITH_IEEE8021QBV_COMMON"
+        linkerFlags = ""
+        />
+    <feature
+        id="IEEE8021Qci_common"
+        name="IEEE 802.1Qci Common"
+        description = "The common part of the IEEE 802.1Qci implementation"
+        initiallyEnabled = "true"
+        requires = "IEEE8021Q_common AVB_common"
+        labels = ""
+        nedPackages = "
+                       core4inet.linklayer.filtering.IEEE8021Qci
+                      "
+        extraSourceFolders = ""
+        compileFlags = "-DWITH_IEEE8021QCI_COMMON"
+        linkerFlags = ""
+        />
+    <feature
+        id="TSN_nodes"
+        name="TSN Nodes"
+        description = "Nodes with combined Qbv and Qci functionallity"
+        initiallyEnabled = "true"
+        requires = "IEEE8021Qbv_common IEEE8021Qci_common"
+        labels = ""
+        nedPackages = "
+                       core4inet.nodes.ethernet.tsn
+                      "
+        extraSourceFolders = ""
+        compileFlags = ""
+        linkerFlags = ""
+        />
+    <feature
+        id="IPoRE"
+        name="IP over realtime ethernet"
+        description = "The implementation of IPv4 over realtime ethernet (AS6802, avb)"
+        initiallyEnabled = "true"
+        requires = "AVB_common AS6802_common IEEE8021Q_common"
+        labels = ""
+        nedPackages = "
+
+                       core4inet.base.IPoRE
+                       core4inet.networklayer.inet
+                       core4inet.nodes.inet
+                      "
+        extraSourceFolders = ""
+        compileFlags = "-DWITH_IPORE"
+        linkerFlags = ""
+        />
+</features>
