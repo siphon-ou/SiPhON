@@ -39,3 +39,7 @@ Choose the "Default" config name when asked.
 ## References
 
 O. Alparslan, S. Arakawa, and M. Murata, "A Zone-based Optical Intra-Vehicle Backbone Network Architecture with Dynamic Slot Scheduling," Optical Switching and Networking, vol. 50, August 2023.
+
+## Acknowledgements
+
+This work is supported by the commissioned research (No. 21801) by National Institute of Information and Communications Technology (NICT), Japan. 
