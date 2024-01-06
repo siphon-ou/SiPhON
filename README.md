@@ -26,6 +26,7 @@ The simulator is tested only on Windows.
 	Select "Select archive file". Click Browse and choose the inet-3.6.6-src.tgz file.
 6. Download SiPhON as a zip file from [https://github.com/siphon-ou/SiPhON](https://github.com/siphon-ou/SiPhON)
 5. Install SiPhON
+   
 	In OMNeT++, click File -> Import - > General -> Existing Projects into Workspace.
 
 	Select "Select archive file". Click Browse and choose the downloaded SiPhON-main.zip file.
