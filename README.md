@@ -15,14 +15,22 @@ The simulator is tested only on Windows.
     * [https://doc.omnetpp.org/omnetpp/InstallGuide.pdf](https://doc.omnetpp.org/omnetpp/InstallGuide.pdf)
 3. Download INET framework 3.6.6
     * [https://github.com/inet-framework/inet/releases/download/v3.6.6/inet-3.6.6-src.tgz](https://github.com/inet-framework/inet/releases/download/v3.6.6/inet-3.6.6-src.tgz)
-4. Install INET framework 3.6.6
+4. Install INET framework 3.6.6.
+   
 	Run mingwenv.cmd
+
 	Enter the command omnetpp
-	In OMNeT++, click File -> General -> Existing Projects into Workspace. Press "Select archive file". Choose the inet-3.6.6-src.tgz file.
-5. Download SiPhON
-	Download (clone) as a zip file from [https://github.com/siphon-ou/SiPhON](https://github.com/siphon-ou/SiPhON)
+
+	In OMNeT++, click File -> Import - > General -> Existing Projects into Workspace.
+
+	Select "Select archive file". Click Browse and choose the inet-3.6.6-src.tgz file.
+6. Download SiPhON as a zip file from [https://github.com/siphon-ou/SiPhON](https://github.com/siphon-ou/SiPhON)
 5. Install SiPhON
-	In OMNeT++, click File -> General -> Existing Projects into Workspace. Press "Select archive file". Choose the downloaded SiPhON-main.zip file.
+	In OMNeT++, click File -> Import - > General -> Existing Projects into Workspace.
+
+	Select "Select archive file". Click Browse and choose the downloaded SiPhON-main.zip file.
+
+	Ignore the warnings.
 	
 	
 ## Simulation
